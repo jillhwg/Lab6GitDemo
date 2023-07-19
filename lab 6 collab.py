@@ -9,9 +9,15 @@ def encode(password):
         encoded_password += str(encoded_number)
     return encoded_password
 
-
-def decode():
-    pass
+'''
+maile's code
+'''
+def decode(numbers):
+    encoded_password = ''
+    for i in numbers:
+        decoded_number = int(i) - 3
+        encoded_password += str(decoded_number)
+    return encoded_password
 
 
 def menu():
@@ -32,7 +38,8 @@ def main():
             encoded_password = encode(password)
             print()
         if option == 2:
-            print(f"The encoded password is {encoded_password}, and the original password is {password}")
+            decoded_code = decode(encoded_password)
+            print(f"The encoded password is {encoded_password}, and the original password is {decoded_code}")
             print()
         if option == 3:
             break
